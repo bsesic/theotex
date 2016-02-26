@@ -1,0 +1,146 @@
+%Vorlage einer akademischen/theologischen Hausarbeit/Doktorarbeit wie sie in Tübingen verlangt wird
+
+
+%Schriftgröße, Layout, Papierformat, Art des Dokumentes, anderthalbzeilig
+\documentclass[12pt,oneside,a4paper]{scrreprt}
+\linespread{1.5}
+%Inhaltsverzeichnis anklickbar 
+\usepackage{hyperref}
+
+
+%Fußnotenfetischismus
+\usepackage[style=authortitle-icomp, bibstyle=authoryear, pagetracker=true, isbn=false, citestyle=verbose-trad1, url=false, backend=bibtex]{biblatex}
+\addbibresource{essay.bib}
+
+%Ego-Parameter
+\author{Jonathan A. Wahl}
+
+%Sprachen
+\usepackage[ngerman]{babel}
+\usepackage{fontspec, polyglossia}
+\setmainfont{Times New Roman}
+\setdefaultlanguage{german}
+\setotherlanguages{greek,hebrew}
+\usepackage{cjhebrew}
+\usepackage{bidi}
+
+%Bibelversreferenzen kurze RGG Variante
+\usepackage[RGG]{bibleref-german}
+
+
+%Einstellungen der Seitenränder
+\usepackage[left=3cm,right=4cm,top=3cm,bottom=6cm,includeheadfoot]{geometry}
+%Kopf- und Fußzeile
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+%Kopfzeile links bzw. innen: hier Autor
+\fancyhead[L]{Jonathan A. Wahl}
+%Kopfzeile rechts bzw. außen
+\fancyhead[R]{\nouppercase{\leftmark}}
+
+%Fußzeile mittig
+\fancyfoot[C]{\thepage}
+%Linie unten
+\renewcommand{\footrulewidth}{0.5pt}
+%Linie oben
+\renewcommand{\headrulewidth}{0.5pt}
+
+
+
+\begin{document}
+
+% empty pagestyle heißt kein schnickschnack aussen rum
+\thispagestyle{empty}
+
+\begin{flushleft}
+
+{\Large Evangelisch-Theologische Fakultät\\  Eberhard-Karls-Universität Tübingen}\\[10ex]%\\[10ex] heißt 10 pt. leer
+
+{\Huge Raumschiffe und Atheismus}\\[2ex]
+
+{\Large Wieso gibt es keine Kapelle auf der \emph{Enterprise}?}\\
+
+{\large Eine systematisch-theologische Hauptseminararbeit}\\[20ex]
+
+
+\begin{tabular}{l l}
+Name: & Jonathan A. Wahl\\
+Semester: & 15\\
+Adresse: & Brühlstr. 7\\ 
+ & 72810 Gomaringen\\
+Email: & J@brainhacking.de\\
+Dozent: & Prof. Dr. Christoph Schwöbel\\
+Fachbereich: & Systematische Theologie\\
+Lehrveranstaltung: & Science-Fiction und Theologie\\ 
+ & Sommersemester 2019\\
+Abgabedatum: & 3. September 2019\\
+\end{tabular}
+\end{flushleft}
+
+
+% Inhaltsverzeichnis
+\pagenumbering{roman}
+\tableofcontents
+\pagebreak
+ 
+\pagenumbering{arabic}
+\chapter{Essay}
+\section{Einleitung}
+\begin{quote}
+Am Anfang wurde das Universum erschaffen. Das machte viele Leute sehr wütend und wurde allenthalben als Schritt in die falsche Richtung angesehen.
+\end{quote}
+\begin{flushright}-- Douglas Adams\autocite{anhalter}
+\end{flushright}
+
+
+
+
+\section{Zitier Test}
+\glqq Dieser Apfel ist rund\grqq, wie in der LXX steht\autocite[Vgl. Gen 1,1 in ][]{LXX}... und Wright in seinem Artikel schrieb. \autocite{Wright:2015tp}
+Außerdem ist Avakian der Meinung, dass ... \autocite{Avakian:2012tz}, was übrigens auch von Zenger vertreten wird. \autocite[Vgl.][45]{ZengerPs}
+
+\section{Fremde Sprachen}
+\subsection{Griechischer Text}
+Wie in \bibleverse{John}(12:26) geschrieben steht: ἐὰν ἐμοί τις διακονῇ, ἐμοὶ ἀκολουθείτω, καὶ ὅπου εἰμὶ ἐγὼ ἐκεῖ καὶ ὁ διάκονος ὁ ἐμὸς ἔσται · ἐάν τις ἐμοὶ διακονῇ τιμήσει αὐτὸν ὁ πατήρ.\autocite{NA:28}
+\subsection{Hebräisch}
+Du kannst in Umschrift Hebräisch schreiben
+\bibleverse{Gen}(1:1) 
+
+\cjRL{b*:re’+siyt b*ArA’ ’E:lohiym ’et ha+s*Amayim w:’et hA’ArE.s; w:hA’ArE.shAy:tAh tohU wAbohU w:.ho+sEk: ‘al--p*:ney t:hOm w:rU/a.h ’E:lohiymm:ra.hEpEt ‘al--p*:ney ham*Ayim;}
+Und auch mitten im Satz \cjRL{+sAlom} kann man das tun.
+
+Oder direkt Hebräisch tippen bzw. von www.bibelwissenschaft.de kopieren:
+\RL{אֱזָר־נָ֣א כְגֶ֣בֶר חֲלָצֶ֑יךָ אֶ֝שְׁאָלְךָ֗ וְהֹודִיעֵֽנִי׃}
+\bibleverse{Job}(40:7)
+
+Nochmal aus einem Mac Programm\footnote{Olivetree Biblestudy, BHS.} \bibleverse{Ps}(22:1):
+
+ \RL{לַ֭מְנַצֵּחַ עַל־אַיֶּ֥לֶת הַשַּׁ֗חַר מִזְמ֥וֹר לְדָוִֽד׃}
+ 
+Sieht nicht so gut aus, stimmt's?
+ 
+\chapter{Anhang}
+
+\section{Literatur}
+%Hier wird die Bibliographie gesetzt, Keywords sind Gr. und Kleinschreibungsempfindlich!
+\defbibheading{quelle}{\subsection{Quellen}}
+\printbibliography[keyword=Quelle,heading=quelle] 
+\defbibheading{kommentar}{\subsection{Kommentare}}
+\printbibliography[keyword=Kommentar,heading=kommentar]
+\defbibheading{lexikon}{\subsection{Lexika und Hilfsmittel}}
+\printbibliography[keyword=Lexikon,heading=lexikon]
+\defbibheading{lit}{\subsection{Sonstige Literatur}} 
+\printbibliography[notkeyword=Quelle,notkeyword=Lexikon,notkeyword=Kommentar,heading=lit] 
+
+
+\newpage
+\section{Versicherung}
+\normalsize
+\noindent Ich versichere, dass ich die vorliegende Arbeit selbstständig verfasst und keine anderen als die angegebenen Quellen und Hilfsmittel benutzt habe. Alle Stellen der Arbeit, die wörtlich oder sinngemäß aus anderen Quellen übernommen worden sind, sind als solche kenntlich gemacht. Die Arbeit ist in gleicher oder ähnlicher Form noch keiner Prüfungsbehörde vorgelegt worden.\\%[1ex]
+
+\noindent
+Tübingen, den St. Nimmerleinstag\\[4ex]
+
+\noindent Jonathan A. Wahl
+\end{document}
